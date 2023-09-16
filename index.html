@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/97d8201115.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary container mt-3">
+            <div class="container-fluid">
+              <a class="navbar-brand fs-3" href="#">News<span class="bg-danger fs-3 rounded ms-1 my-1 px-2 text-white">Hub</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <ul class="d-flex " >
+                  <div class="mt-1 mx-4">
+                    <a class="text-decoration-none fs-5 me-4 text-black-50" href="">News</a>
+                    <a class="text-decoration-none fs-5 text-black-50" href="">Blog</a>
+                  </div>
+                  <div style="width: 40px; height: 40px;">
+                    <img class="img-fluid rounded-circle border border-danger-subtle" src="Images/Profile.png" alt="">
+                  </div> 
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <hr class="border border-black-50 container">
+    </header>
+    <main>
+        <section class="container">
+            <ul class="d-flex justify-content-between list-unstyled fs-5">
+                <li class="text-decoration-none"><a class="text-decoration-none text-black-50 btn btn-light" >Home</a> </li>
+                <li><button onclick="allBrakingNews('01')" class="text-decoration-none text-black-50  btn btn-light" > Breaking News</button></li>
+                <li><button onclick="allBrakingNews('02')" class="text-decoration-none text-black-50 btn btn-light" > Regular News</button></li>
+                <li><button onclick="allBrakingNews('03')" class="text-decoration-none text-black-50 btn btn-light" > Internation News</button></li>
+                <li><button onclick="allBrakingNews('04')" class="text-decoration-none text-black-50 btn btn-light" > Sports</button></li>
+                <li><button onclick="allBrakingNews('05')" class="text-decoration-none text-black-50 btn btn-light" > Entertainment</button></li>
+                <li><button onclick="allBrakingNews('06')" class="text-decoration-none text-black-50 btn btn-light" > Culture</button></li>
+                <li><button onclick="allBrakingNews('07')" class="text-decoration-none text-black-50 btn btn-light" > Arts</button></li>
+                <li><button onclick="allBrakingNews('08')" class="text-decoration-none text-black-50 btn btn-light" > All News</button></li>
+            </ul>
+        </section>
+        <section class="item-info container">
+          <div id="news-quantity" class="news-counter">
+
+          </div>
+
+        </section>
+        <section class="container d-flex justify-content-between mt-5">
+            <div class="d-flex align-items-center">
+                <p class="pt-3"> Sort by View</p>
+                <select class="ms-3 p-2" name="Selection" id="">
+                    <option value="Default"> Default</option>
+                    <option value="Heigst View"> Highest View</option>
+                </select>
+            </div>
+            <div class="">
+                <a class="btn btn-danger" href="#" role="button">Today's Pic</a>
+                <a class="btn btn-danger ms-2" href="#" role="button">Trending</a>
+        </section>
+
+        <section  class="News container mt-5">
+
+            <div id="news" > 
+              
+
+            </div>
+
+        </section>
+
+    </main>
+   <footer class="bg-black text-center py-4 mt-5">
+        <p class="text-white"> Copyright © 2023 KhaledPexp!</p>
+   </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
