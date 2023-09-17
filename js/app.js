@@ -6,18 +6,30 @@ const allBrakingNews = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data[0].details);
-    // console.log(data.data.length);
     newsQuantity.innerHTML = '';
     news.innerHTML = '';
 
-    
+    const catagory = await fetch("https://openapi.programming-hero.com/api/news/categories");
+    const catagoryDetails = await catagory.json()
+    const catagoryDetailsdata = catagoryDetails.data.news_category;
+
+// catgory name define
+   // console.log(catagoryDetailsdata);
+
+    let catagoryName = '';
+    for(let i = 0 ; i < catagoryDetailsdata.length ; i++){
+
+          if ( catagoryDetailsdata[i].category_id  === id){
+            catagoryName = catagoryDetailsdata[i].category_name;
+          }
+    }
+
 // news counter 
 if (`${data.data.length}` > 0 ){
         const newsCounterText = document.createElement('p');
         newsCounterText.style.backgroundColor = "white" ;
         newsCounterText.style.padding = "20px" ;
-         newsCounterText.innerText = `${data.data.length} Items Found for Category Breaking News`;
+         newsCounterText.innerText = `${data.data.length} Items Found for Category ${catagoryName}`;
         newsQuantity.appendChild(newsCounterText);
 
 // news 
@@ -62,7 +74,7 @@ if (`${data.data.length}` > 0 ){
                                   <img class="img-fluid rounded-circle border border-danger-subtle mt-1" src="${data.data[i].author.img}" alt="">
                                 </div>
                                 <div class="ps-2">
-                                  <p> ${data.data[i].author.name} <br> <span class="text-black-50"> ${data.data[i].author.published_date} </span></p>
+                                  <p> ${data.data[i].author.name ? data.data[i].author.name : 'No data available' } <br> <span class="text-black-50"> ${data.data[i].author.published_date ? data.data[i].author.published_date : 'Not matched' } </span></p>
                                 </div>
 
                               </div>
@@ -90,7 +102,7 @@ else{
         const newsCounterText = document.createElement('p');
         newsCounterText.style.backgroundColor = "white" ;
         newsCounterText.style.padding = "20px" ;
-         newsCounterText.innerText = `No Items Found for Category Breaking News`;
+         newsCounterText.innerText = `No Items Found for Category ${catagoryName}`;
         newsQuantity.appendChild(newsCounterText);
         news.innerHTML = '';
     }
@@ -126,7 +138,7 @@ const modalAction = async (newsId) => {
           <div class="modal-body d-flex flex-column align-items-center">
             <p> Written by:<span class="ps-2">${singelNewsDetails.data[0].author.name ? singelNewsDetails.data[0].author.name : 'No data available'}</span></p>
             <img class="img-fluid w-50 h-50 mb-4 border rounded" src="${singelNewsDetails.data[0].thumbnail_url}" alt="">
-            <p>${singelNewsDetails.data[0].details}</p>
+            <p>${singelNewsDetails.data[0].details.slice(0, 500)}...</p>
           </div>
           <div class="modal-footer bg-primary justify-content-center">
             <p class="text-white">Total View:<span class="ps-2">${singelNewsDetails.data[0].total_view}</span></p>
