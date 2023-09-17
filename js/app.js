@@ -124,7 +124,7 @@ const modalAction = async (newsId) => {
             <button type="button" class="btn-close" onclick="closeModal()"></button>
           </div>
           <div class="modal-body d-flex flex-column align-items-center">
-            <p> Written by:<span class="ps-2">${singelNewsDetails.data[0].author.name}</span></p>
+            <p> Written by:<span class="ps-2">${singelNewsDetails.data[0].author.name ? singelNewsDetails.data[0].author.name : 'No data available'}</span></p>
             <img class="img-fluid w-50 h-50 mb-4 border rounded" src="${singelNewsDetails.data[0].thumbnail_url}" alt="">
             <p>${singelNewsDetails.data[0].details}</p>
           </div>
