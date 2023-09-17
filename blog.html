@@ -31,42 +31,59 @@
           <hr class="border border-black-50 container">
     </header>
     
-     <main class="container-fluid">
+     <main class="container mt-5" style="height: 65vh;">
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Accordion Item #1
+                  What's the Difference between Var, Let, and Const?
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  Var is the oldest ways to declare a variable in javascript and it is accessible from both global and functional scope. Also We can reassign and redeclare var. Let and Const variable are accessible only in block scope. Let variable accept reassigninng a value but const doesn't allow it. Also We can't redeclare let and const.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Accordion Item #2
+                  What is the Difference Between Regular Functions and Arrow Functions
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  Arrow function is the newest way of function declation in javascript. syntax of regular and arrow function are different. Arrow function doesn't have their own this keyword like regular function. Arguments object are not available in arrow function but available in regular funciton. Regular functions can be used as constructors, using new keyword but arrow funciton can't.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Accordion Item #3
+                  What are the difference between map, filter, find, and foreach in Javascript?
                 </button>
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  Map takes a callback and run against every element on array and generate a new array based on the existing array.
+                  Filter take a callback for every element and returns a filtered array.Filter executes the callback and check its return value and it the value is true element remains in the resulting array but if it false then it's remove from resulting array.
+                  find and filter work like same but find returns the first matching element and filter returns an array of all matching elements
+                  foreach takes a callback function and run on each element of array one by one.foreach works like tradional for looping.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFoure" aria-expanded="false" aria-controls="collapseFoure">
+                  Why should we use template literals?
+                </button>
+              </h2>
+              <div id="collapseFoure" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Template literals are declared with backtick (``) characters. Template literals make it far easier to write multiline strings then normal string declartion. It's easier to include varialbes and expression inside a string using template literals. syntax like ${..}.A more advanced form of template literals are tagged templates. Tags allow you to parse template literals with a function.
+
+
                 </div>
               </div>
             </div>
